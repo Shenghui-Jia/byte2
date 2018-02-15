@@ -24,18 +24,18 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 # This API key is provided by google as described in the tutorial
-API_KEY = 'XXxxXxXXXXxxNXXxXXXxxxNNXXxxxxxxxXXXxXX'
+API_KEY = 'AIzaSyAf3wl6PtH7JKbsYm4Z1zCRSUO8CqMEsgo'   #################
 
 # This uses discovery to create an object that can talk to the 
 # fusion tables API using the developer key
 service = build('fusiontables', 'v1', developerKey=API_KEY)
 
 # This is the table id for the fusion table
-TABLE_ID = 'NxxxNXxXxxNxXXXXNXxXXXxXxxxNxXxNxXxxXxxX'
+TABLE_ID = '1t4PxdGHsHCrj856tQVC-JHxFkinK8KVUjuA4oUFO'  #airtrip_rate  ########################
 
 # This is the default columns for the query
 query_cols = []
-query_values = ['Forlan'] #Change to be the value(s) you're querying in the column you've specified
+query_values = ['united-airlines'] #Change to be the value(s) you're querying in the column you've specified  ########
 
 # Import the Flask Framework
 from flask import Flask, request
@@ -70,8 +70,9 @@ def make_query(cols, values, limit):
         string_values = string_values + ", " + val
     string_values = string_values[2:len(string_values)]
     
+	#
     #Change this query to have your corresponding column (in our soccer example, the column for our WHERE is Scorer).
-    query = "SELECT " + string_cols + " FROM " + TABLE_ID + " WHERE Scorer = '" + string_values + "'"
+    query = "SELECT " + string_cols + " FROM " + TABLE_ID + " WHERE airline_name = '" + string_values + "'"  ##########
 
     query = query + " LIMIT " + str(limit)
 
@@ -87,7 +88,7 @@ def make_query(cols, values, limit):
 def index():
     template = JINJA_ENVIRONMENT.get_template('templates/index.html')
     request = service.column().list(tableId=TABLE_ID)
-    res = get_all_data(make_query([], query_values, 5)) #5 is our limit we're passing in
+    res = get_all_data(make_query([], query_values, 50)) #5 is our limit we're passing in ##########
     logging.info('allheaders')
     return template.render(columns=res['columns'], rows = res['rows'] )
 
