@@ -46,28 +46,56 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
 	<h1>Quality: About This Data Set</h1>
-        <p>Write a brief summary about the quality of the data set here</a></p>
+      <!--    <p>Write a brief summary about the quality of the data set here</a></p>-->
+        
+        <p>Brief: This data is quite high quality in my mind. First, its volume is big enough. It includes over 40,000 reviews with comprehensive variables to describe a tirp experience.
+        Second, its data is diverse. It includes different reviews for almost 200 different airlines and from different passengers came from almost 200 different countries.
+        In addition, as the author of the github page of this dataset said, this data has been also cited in many webpage articles and reviews.</p>
+        <p>However, there are also some shortcomming in this data. As showed by Trifacta Wrangler, the integrality of some variables, including "aircraft" (A380, A330...), "type_traveller" (Business, Leisure...), "wifi_connectivity_rating", "ground_service_rating"
+        is low. In these variables, only less than 10 percent data is valid. These variables are almost full of void value.</p>
       </div>
 
     
       <div class="page-header">
 	<h2>Is the data complete?</h2>
-	<p>If not, what is missing and what concerns does it raise?
-	What is your evidence for this?</p>
-      </div>
+<!--	<p>If not, what is missing and what concerns does it raise?
+	What is your evidence for this?</p> <img src="img/airline_overall.png" alt="dataset overall status" >  -->
+	<p>This dataset is quite completed and representative in my mind.</p>
+	<p>Frist, it literally include 41,396 reviews with 15 variables. And the majority of variables are full by correct-formatted values.</p>
+	<iframe width="800" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?q=select+col1+from+18MyHVh8LRiSZSxJtHEzsCW6sCI4y0XkCSxsr9usr&amp;viz=MAP&amp;h=false&amp;lat=26.283819485058793&amp;lng=342.13246912499994&amp;t=1&amp;z=3&amp;l=col1&amp;y=2&amp;tmplt=2&amp;hml=ONE_COL_LAT_LNG"></iframe>
+	<p>Second, As showed in the map above, these reviews are made by different passengers from almost all over the world.</p>
+	</div>
       
       <div class="page-header">
 	<h2>Is the data coherent?</h2>
 	<p>Does it make sense relative to itself? Does it match your
 	expectations? Are the distributions sensible? What is your
 	evidence for this?</p>
+	<p>This dataset is coherent. When I was exploring this dataset, I sampled and reviewed some piece of reivews, they looks a strong interally coherent.
+	For example, If a passenger left complains in the "content" variables, the value in "overall_rating", "cabin_saft_rating", and/or "seat_comfort_rating" would
+	corresponding drop.</p>
+	<p>Also, it mainly matchs my expectation and learns from other relative research. As the question described in the Home page, "Passengers in which cabin(s) feel most satisfied in general?",
+	the result summerized from this dataset shows similar pattern which I heard from other research.</p>
+	<p>In addition, from the perspective of data's sensibility, as chart showed in the next question, we could see that these variables vary significantly.</p>
+	<p></p>
+	<p></p>
       </div>
 
       <div class="page-header">
 	<h2>Is the data correct?</h2>
-	<p>What aspects of this data can you verify? How did you do so? What did
-	you find?</p>
-      </div>
+<!--	<p>What aspects of this data can you verify? How did you do so? What did
+	you find?</p>  -->
+	<p></p>
+	<p>This dataset may be not very relaible. Generally, rating data are likely to be scattered in normal distribution. So, I picked 3 rating aspects for observing if thses reviews distributed normally.</p>
+	 <iframe width="800" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col6%2C+count()+from+18MyHVh8LRiSZSxJtHEzsCW6sCI4y0XkCSxsr9usr+where+col6+%3E%3D+1+and+col6+%3C%3D+10+group+by+col6+order+by+col6+asc+limit+10&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3Anull%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_legacyScatterChartLabels=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3A10%2C+%22min%22%3A1%7D%2C+%22minValue%22%3A1%2C+%22maxValue%22%3A10%2C+%22viewWindowMode%22%3A%22explicit%22%2C+%22title%22%3A%22%22%7D&amp;gco_legend=none&amp;gco_title=Distribution+of+overall+rating&amp;gco_backgroundColor=%7B%22fill%22%3A%22%23f3f3f3%22%7D&amp;width=800&amp;height=600"></iframe>
+     <iframe width="800" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col7%2C+count()+from+18MyHVh8LRiSZSxJtHEzsCW6sCI4y0XkCSxsr9usr+where+col7+%3E%3D+0+and+col7+%3C%3D+5+group+by+col7+order+by+col7+asc+limit+7&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3Anull%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_legacyScatterChartLabels=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3A5%2C+%22min%22%3A0%7D%2C+%22minValue%22%3A0%2C+%22maxValue%22%3A5%2C+%22title%22%3A%22%22%2C+%22viewWindowMode%22%3A%22explicit%22%7D&amp;gco_legend=none&amp;gco_title=Distribution+of+seet+comfor+rating&amp;gco_backgroundColor=%7B%22fill%22%3A%22%23f3f3f3%22%7D&amp;gco_trendlines=%7B%7D&amp;width=800&amp;height=600"></iframe>
+     <iframe width="800" height="600" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col8%2C+count()+from+18MyHVh8LRiSZSxJtHEzsCW6sCI4y0XkCSxsr9usr+where+col8+%3E%3D+0+and+col8+%3C%3D+5+group+by+col8+order+by+col8+asc+limit+10&amp;viz=GVIZ&amp;t=COLUMN&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_vAxes=%5B%7B%22title%22%3Anull%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_useFirstColumnAsDomain=true&amp;gco_legacyScatterChartLabels=true&amp;gco_isStacked=false&amp;gco_booleanRole=certainty&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3A5%2C+%22min%22%3A0%7D%2C+%22minValue%22%3A0%2C+%22maxValue%22%3A5%2C+%22viewWindowMode%22%3A%22explicit%22%7D&amp;gco_legend=none&amp;gco_title=Distribution+of+cabin+staff+rating&amp;gco_backgroundColor=%7B%22fill%22%3A%22%23f3f3f3%22%7D&amp;width=800&amp;height=600"></iframe>
+     <p>These three rating variables picked above are highly complete variables in this dataset (void or incurrect-formatted data are less than 10 percence in these variables).
+     However, we could find in charts above that most of them did not show a strong normal distribution shape, on the contrary, like overall_rating, part of them even show a strong polarization shape.</p>
+     <p>But, this may be also reasonable, because the source of this dataset, Skytrax, is a 3rd-party airline review website. This means if a review did not have a strong motivation to review his or her trip experience, they might not
+     want to write a review on this website. Therefore, the reviews recorded in its dataset will become polarized. Highly satisfied and highly disappointed passengers are more willing to share their experience to others. 
+     <p>In a nutshell, though this dataset shows a slightly abnormal status, I think, it mainly can be viewed reasonable and correct. However, this dataset may biased. And all result derived from this dataset should be carefully processed to rule out thses potential bias.</p>
+     </div>
 
     </div> <!-- /container -->
 
